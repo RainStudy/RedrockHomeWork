@@ -105,8 +105,7 @@ public class Main {
      */
     static void add(String id, String name) {
         // 数组扩容操作
-        String[][] newData = new String[2][studentData.length + 1];
-        System.arraycopy(studentData, 0, newData, 0, newData.length);
+        String[][] newData = Arrays.copyOf(studentData, studentData.length + 1);
         newData[newData.length - 1] = new String[]{id, name};
         studentData = newData;
     }
