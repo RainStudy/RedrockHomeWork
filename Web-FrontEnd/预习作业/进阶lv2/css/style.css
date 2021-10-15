@@ -1,0 +1,59 @@
+.icon {
+    transform: translateY(10%);
+    background-image: url(https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png);
+    background-size: cover;
+    width: 270px;
+    height: 129px;
+    margin: 0 auto;
+}
+
+.head {
+    width: auto;
+    height: 50px;
+    margin: 0 auto;
+    text-align: right;
+    line-height: 20px;
+}
+
+.box {
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: underline;
+}
+
+.box1 {
+    cursor: pointer;
+    display: inline-block;
+    width: 60px;
+    height: 20px;
+    border-radius: 10%;
+    background-color: rgb(58, 119, 250);
+    text-align: center;
+    color: azure;
+}
+
+.search {
+    position:absolute;
+    bottom: 480px;
+    left: 450px;
+    width: 546px;
+    height: 33px;
+    border: 2px solid rgb(80, 80, 80);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    font-size: large;
+}
+
+.searchButton {
+    position: absolute;
+    bottom: 480px;
+    left: 1000px;
+    cursor: pointer;
+    background-color: rgb(85, 142, 248);
+    text-align: center;
+    color: aliceblue;
+    width: 100px;
+    height: 35px;
+    border: 2px solid rgb(85, 142, 248);
+    line-height: 30px;
+}
