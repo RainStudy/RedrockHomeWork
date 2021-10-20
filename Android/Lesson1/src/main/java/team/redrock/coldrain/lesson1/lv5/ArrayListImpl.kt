@@ -1,5 +1,7 @@
 package team.redrock.coldrain.lesson1.lv5
 
+import com.google.gson.Gson
+
 /**
  * team.redrock.coldrain.lesson1.lv5.ArrayListImpl
  * Lesson1
@@ -9,10 +11,11 @@ package team.redrock.coldrain.lesson1.lv5
  * @since 2021/10/18 18:14
  **/
 class ArrayListImpl<T> {
-    private var elementData: Array<Any?> = arrayOf()
+    private val gson = Gson()
+    private var elementData: Array<Any?> = arrayOfNulls(10)
 
-    val size: Int
-        get() = elementData.size
+    var size: Int = 0
+        private set
 
     /**
      * 添加元素
@@ -20,12 +23,8 @@ class ArrayListImpl<T> {
      * @param element 元素
      */
     fun add(element: T) {
-        val newData = arrayOfNulls<Any>(size + 1)
-        elementData.forEachIndexed { i, any ->
-            newData[i] = any
-        }
-        newData[size] = element
-        elementData = newData
+        expandIfOutOfBounds()
+        elementData[size - 1] = element
     }
 
     /**
@@ -35,16 +34,15 @@ class ArrayListImpl<T> {
      * @param element 元素
      */
     fun add(index: Int, element: T) {
-        val newData = arrayOfNulls<Any>(size + 1)
-        var meet = false
-        elementData.forEachIndexed { i, any ->
-            if (index == i && !meet) {
-                newData[i] = element
-                meet = true
-            }
-            newData[if (meet) i+1 else i] = any
+        if (index >= size) error("数组越界")
+        expandIfOutOfBounds()
+        var temp: Any? = elementData[index]
+        elementData[index] = element
+        for (i in (index + 1) until elementData.size) {
+            val temp1 = elementData[i]
+            elementData[i] = temp
+            temp = temp1
         }
-        elementData = newData
     }
 
     /**
@@ -56,6 +54,7 @@ class ArrayListImpl<T> {
      */
     @Suppress("UNCHECKED_CAST")
     fun get(index: Int): T {
+        if (index >= size) error("数组越界")
         return elementData[index] as T
     }
 
@@ -66,18 +65,11 @@ class ArrayListImpl<T> {
      */
     fun remove(index: Int) {
         if (index >= size) error("数组越界")
-        val newData = arrayOfNulls<Any>(elementData.size - 1)
-        elementData.forEachIndexed { i, any ->
-            var meet = false
-            if (i < newData.size) {
-                if (i == index) {
-                    meet = true
-                    return@forEachIndexed
-                }
-                newData[if (meet) i - 1 else i] = any
-            }
+        elementData[index] = null
+        for (i in (index + 1)..size) {
+            elementData[i] = elementData[i + 1]
         }
-        elementData = newData
+        size--
     }
 
     /**
@@ -86,26 +78,37 @@ class ArrayListImpl<T> {
      * @param element 元素
      */
     fun remove(element: T) {
-        // 取得数组中相同元素数量
-        var elementNum = 0
-        elementData.forEach {
-            if (it == element) {
-                elementNum++
+        var tempSize = size
+        for (i in (0 until size)) {
+            if (element == elementData[i]) {
+                elementData[i] = null
             }
         }
-        val newData = arrayOfNulls<Any>(elementData.size - elementNum)
-        var finds = 0
-        elementData.forEachIndexed { i, any ->
-            if (any == element) {
-                finds++
-                return@forEachIndexed
+        for (i in (0 until size)) {
+            if (elementData[i] == null) {
+                for (j in (i + 1..tempSize)) {
+                    elementData[j - 1] = elementData[j]
+                }
+                tempSize--
             }
-            newData[i - finds] = any
         }
-        elementData = newData
+        size = tempSize
     }
 
-    fun toContentString(): String {
-        return elementData.contentDeepToString()
+    override fun toString(): String {
+        return gson.toJson(elementData.filterNotNull())
+    }
+
+    private fun expandIfOutOfBounds() {
+        // 自动扩容1.5倍
+        size++
+        if (size > elementData.size) {
+            val newSize = if (elementData.size * 3 / 2 > elementData.size + 1) elementData.size * 3 / 2 else elementData.size + 1
+            val newData = arrayOfNulls<Any>(newSize)
+            elementData.forEachIndexed { index, any ->
+                newData[index] = any
+            }
+            elementData = newData
+        }
     }
 }

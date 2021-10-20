@@ -3,7 +3,7 @@ body
     background-color: #cecbcb5e;
     margin: 0;
     padding: 0;
-    background-image: url(http://www.dmoe.cc/random.php);
+    /* background-image: url(http://www.dmoe.cc/random.php);  */
     background-size: cover;
     background-repeat: no-repeat;
 }
