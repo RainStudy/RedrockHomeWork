@@ -1,19 +1,27 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"sync"
+)
 
-func main() {
-	fmt.Println("HelloWorld")
-	fmt.Println(f1(1, 2, "sb"))
-	sum := 0
-	for i := 1; i <= 100; i++ {
-		sum += i
+var x int64
+var wg sync.WaitGroup
+var mu sync.Mutex
+
+func add() {
+	for i := 0; i < 50000; i++ {
+		mu.Lock()
+		x = x + 1
+		mu.Unlock()
 	}
-	fmt.Println(sum)
+	wg.Done()
 }
 
-func f1(a, b int, c string) (sum int, cc string) {
-	sum = a + b
-	cc = c
-	return
+func main() {
+	wg.Add(2)
+	go add()
+	go add()
+	wg.Wait()
+	fmt.Println(x)
 }
