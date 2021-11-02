@@ -1,0 +1,63 @@
+.main {
+    background-color: white;
+    border: 2px solid red;
+    height: 430px;
+    width: 320px;
+    margin: auto;
+    transform: translateY(30%);
+    padding-left: 30px;
+    padding-top: 10px;
+    padding-right: 30px;
+}
+
+.s1 {
+    color: rgb(82, 81, 81);
+    font-weight: 2px;
+}
+
+.s2 {
+    position: relative;
+    left: 140px;
+    color: rgb(82, 81, 81);
+    font-size: smaller;
+}
+
+input {
+    -webkit-writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    color: -internal-light-dark(black, white);
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    appearance: auto;
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+    background-color: -internal-light-dark(rgb(255, 255, 255), rgb(59, 59, 59));
+    margin: 0em;
+    padding: 1px 2px;
+    border-width: 2px;
+    border-style: inset;
+    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    border-image: initial;
+    border-radius: 2px;
+}
+
+.phone {
+    position: relative;
+    top: 10px;
+    font-size: 14px;
+    cursor: text;
+    width: 300px;
+    height: 50px;
+    text-rendering: auto;
+}
+
+#login-mobile {
+    width: 250px;
+    height: 30px;
+}
