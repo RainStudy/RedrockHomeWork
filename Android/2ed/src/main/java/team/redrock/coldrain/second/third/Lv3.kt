@@ -26,6 +26,22 @@ abstract class King {
             }
         })
     }
+    /**
+     * Java 实现
+     * public void addSoldier(String name, Function func) {
+     *      soldiers.add(new Soldier() {
+     *          @Override
+     *          public void getName() {
+     *              return name;
+     *          }
+     *
+     *          @Override
+     *          public void response() {
+     *              func.execute();
+     *          }
+     *      });
+     * }
+     */
 }
 
 interface Soldier {
