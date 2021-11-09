@@ -1,7 +1,7 @@
 // for
 function factorial(n) {
     let sum = 1;
-    for (let i = 1; i < n; i ++) {
+    for (let i = 1; i <= n; i ++) {
         sum *= i
     }
     return sum
@@ -9,7 +9,7 @@ function factorial(n) {
 
 // 递归
 const factorialFunc = (n, temp = 1, sum = 1) => {
-    if(temp >= n) {
+    if(temp > n) {
         return sum
     }
     sum *= temp
