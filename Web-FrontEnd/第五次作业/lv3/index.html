@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/iconfont.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Comment System</title>
+</head>
+<body>
+    <div id="box" class="card">
+        <h1 style="font-size: 24px;color: dimgrey;"><span class="iconfont icon-liaotian" style="color: darkgray;"></span> 评论</h1>
+        <div id="inputBox">
+            <div id="info">
+                <input type="text" class="vinput" id="inputName" placeholder="昵称">
+                <input type="text" class="vinput" id="inputEmail" placeholder="邮箱地址">
+                <input type="text" class="vinput" id="inputAddress" placeholder="头像图片源地址">
+            </div>
+            <div id="content">
+                <textarea type="text" id="inputContent" placeholder="留下一条友善的评论~"></textarea>
+            </div>
+            <span id="commentButton">回复</span>
+        </div>
+    </div>        
+    <div id="commentArea" class="card">
+            <h1 id="commentTitle" style="font-size: 24px;color: dimgray;">1 条评论</h1>
+            <!--这里是需要用js生成并插入的部分, 这是一条评论的结构示例-->
+            <div class="commentBox card">
+                <div class="infoBox">
+                    <div class="icon" style="background-image: url(https://gitee.com/coldrain-moro/images_bed/raw/master/images/chino.jpg);"></div>
+                    <div class= "info">
+                        <div class="name">寒雨</div>
+                        <div class="email">rain@asgard.hk</div>
+                        <div class="time">2021/11/17 0:25</div>
+                    </div>
+                </div>
+                <div class="contentBox">Test</div>
+                <span class="delete card">删除</span>     
+            </div>
+        </div>
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+#button {
+    border: 2px solid gray;
+    border-radius: 30px;
+    background: linear-gradient(to top,#fbc2eb 0%,#a6c1ee 100%);
+    text-align: center;
+    padding: 5px 20px;
+    line-height: 35px;
+    width: 90px;
+    height: 40px;
+    font-size: large;
+    font-weight: bolder;
+    color: white;
+    cursor: pointer;
+}
+
+#button:hover {
+    transform: translateY(-10%);
+    box-shadow: 5px 8px 4px 2px #a9a9a975;
+}
+
