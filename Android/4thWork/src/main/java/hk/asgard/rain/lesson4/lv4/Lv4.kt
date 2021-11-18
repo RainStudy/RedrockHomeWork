@@ -59,7 +59,7 @@ fun javassistByPass(hero: Entity): Entity {
 }
 
 // 热替换
-// 需要jvm选项 并且implementation tools.jar
+// 需要jvm选项 -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=8000 并且implementation tools.jar
 fun hotSwap() {
     // 获取ctClass
     val ctClass = ClassPool.getDefault().get("hk.asgard.rain.lesson4.lv4.Hero")
