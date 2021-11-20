@@ -17,6 +17,7 @@ package hk.asgard.rain.lesson4.utils
  *
  * @param path 路径 (使用 / 分隔以递归获取)
  */
+@Suppress("UNCHECKED_CAST")
 fun <T> Any.getProperty(path: String): T? {
     val reflectClass = ReflectClass.find(this::class.java)
     val deep = path.indexOf('/')
@@ -53,9 +54,10 @@ fun Any.setProperty(path: String, any: Any?) {
  * @param args 参数
  * @return 返回值
  */
-fun <T> Any.invokeMethod(path: String, vararg args: Any?): T {
+@Suppress("UNCHECKED_CAST")
+fun <T> Any.invokeMethod(path: String, vararg args: Any?): T? {
     val reflectClass = ReflectClass.find(this::class.java)
-    return (reflectClass.findMethod(path, *args) ?: error("Method not found")).invoke(this, *args) as T
+    return (reflectClass.findMethod(path, *args) ?: error("Method not found")).invoke(this, *args) as T?
 }
 
 /**
@@ -66,6 +68,7 @@ fun <T> Any.invokeMethod(path: String, vararg args: Any?): T {
  * @param args 参数
  * @return 实例
  */
+@Suppress("UNCHECKED_CAST")
 fun <T> Class<T>.construct(vararg args: Any?): T {
     return (ReflectClass.find(this::class.java).findConstructor(*args)?.newInstance(args) ?: error("No constructor find")) as T
 }
@@ -79,6 +82,6 @@ fun <T> Class<T>.construct(vararg args: Any?): T {
  * @param args 参数
  * @return 返回值
  */
-fun <T> Class<*>.invokeStatic(path: String, vararg args: Any?): T {
+fun <T> Class<*>.invokeStatic(path: String, vararg args: Any?): T? {
     return invokeMethod(path, args)
 }
