@@ -34,21 +34,21 @@
         // 全选
         all.addEventListener('click', () => {
             const elements = document.getElementsByClassName('select')
-            for (let element of elements) {
+            for (const element of elements) {
                 element.checked = true
             }
         })
         // 全不选
         none.addEventListener('click', () => {
             const elements = document.getElementsByClassName('select')
-            for (let element of elements) {
+            for (const element of elements) {
                 element.checked = false
             }
         })
         // 反选
         mirror.addEventListener('click', () => {
             const elements = document.getElementsByClassName('select')
-            for (let element of elements) {
+            for (const element of elements) {
                 element.checked = !element.checked
             }
         })

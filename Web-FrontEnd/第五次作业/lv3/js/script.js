@@ -52,7 +52,7 @@ function MyComment(author, date, icon, content, email) {
 
 const button = document.getElementById('commentButton')
 const commentArea = document.getElementById('commentArea')
-let commentList = new Array()
+const commentList = new Array()
 
 function comment() {
     const author = document.getElementById('inputName').value == "" ? "Unnamed" : document.getElementById('inputName').value
