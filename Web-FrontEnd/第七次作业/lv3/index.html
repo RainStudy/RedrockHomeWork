@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start </title>
+    <style>
+        p {
+            font-size: 20px;
+        }
+    
+        h1 {
+            font-size: 40px;
+        }
+
+        h2 {
+            margin: 20px;
+            font-size: 30px;
+            font-weight: bolder;
+        }
+    
+        body {
+            text-align: center;
+            color: white;
+            background-color: #202225;
+        }
+    
+        input:focus {
+            outline: none;
+        }
+    
+        .card {
+            /* 卡片效果 类似Android的CardView */
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            border-radius: 10px;
+        }
+
+        .input {
+            text-align: center;
+            color: #72767d;
+            border: 0px;
+            background-color: #40444b;
+            padding: 5px 10px 5px 10px;
+            font-size: 25px;
+            width: 300px;
+            height: 50px;
+        }
+
+        #center {
+            background-color: #36393f;
+            position: absolute;
+            margin: 2% 2% 0 10%;
+            width: 80%;
+            height: 80%;
+        }
+    
+        #input {
+            margin-top: 50px;
+        }
+
+        #button {
+            background-color: #40444b;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 20px;
+            width: fit-content;
+            padding: 20px;
+            margin: 40px auto;
+        }
+    
+    </style>
+</head>
+<body>
+    <div id="center" class="card">
+        <h1>加入聊天室</h1>
+        <p>
+            在这里，您可以 吹水/吹水/还是他娘的吹水
+        </p>
+        <div id="input">
+            <h2>あなたの名前は</h2>
+            <input type="text" id="usernameInput" class="card input" placeholder="你的名字"/>
+            <h2>Avatar Icon Url</h2>
+            <input type="text" id="avatarUrlInput" style="width: 900px;" class="card input" placeholder="你的头像url"/>
+        </div>
+        <div id="button" class="card">进入新世界</div>
+    </div>
+    <script>
+        const button = document.querySelector("#button")
+        const usernameInput = document.querySelector("#usernameInput")
+        const avatarUrlInput = document.querySelector("#avatarUrlInput")
+        button.addEventListener("click", () => {
+            if (usernameInput.value == "") {
+                alert("please enter your username")
+                return
+            }
+            localStorage.setItem("username", usernameInput.value)
+            localStorage.setItem("avatar", avatarUrlInput.value)
+            window.location.href = "chat.html"
+        })
+    </script>
+</body>
+</html>

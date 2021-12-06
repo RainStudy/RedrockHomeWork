@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>聊♂天♂室</title>
+    <script src="lv3.js" type="module" defer></script>
+</head>
+<style>
+    input:focus {
+        outline: none;
+    }
+
+    body {
+        text-align: center;
+        color: white;
+        background-color: #202225;
+    }
+
+    #main {
+        background-color: #36393f;
+        left: 40px;
+        position: absolute;
+        padding: 20px;
+        margin: 1%;
+        width: 90%;
+        height: 90%;
+    }
+
+    #header {
+        border-radius: 2px;
+        padding: 10px;
+        text-align: start;
+        height: fit-content;
+    }
+
+    #content {
+        padding: 20px;
+        margin-top: 20px;
+        width: 97%;
+        height: 86%;
+        overflow-x: hidden;
+        overflow-y: scroll;
+    }
+
+    #input {
+        position: relative;
+        left: 20px;
+        bottom: 70px;
+        width: 96%;
+        height: 50px;
+        text-align: end;
+    }
+
+    #inputText {
+        position: relative;
+        right: 10px;
+        top: 3px;
+        width: 90%;
+        height: 85%;
+        border: 0px;
+        font-size: 20px;
+        background-color: #36393f;
+        color: #72767d;
+        font-weight: 100;
+    }
+
+    .card {
+        /* 卡片效果 类似Android的CardView */
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        border-radius: 10px;
+    }
+
+    .bubble {
+        margin: 10px auto;
+        padding: 5px 10px 5px 10px;
+        width: fit-content;
+        background-color: #36393f;
+        color: aliceblue;
+    }
+
+    .chat {
+        text-align: start;
+        margin: 20px 10px;
+        padding: 10px;
+        height: auto!important;
+        width: fit-content;
+        /* border: 1px solid white; */
+    }
+
+    .avatar {
+        display: inline-block;
+        border-radius: 100%;
+        width: 50px;
+        height: 50px;
+        background-size: cover;
+    }
+
+    .chatContainer {
+        margin: 0px 10px;
+        display: inline-block;
+    }
+
+    .time {
+        padding-left: 10px;
+        font-size: small;
+        color: #72767d;
+    }
+
+    .chatContent {
+        text-align: left;
+        color:#d9dadc;
+        position: relative;
+        top: 10px;
+        right: 2px;
+    }
+
+    .image {
+        width: 300px;
+        height: 300px;
+        background-size: cover;
+    }
+
+</style>
+<body>
+    <div id="main" class="card">
+        <div id="header" class="card">
+            <span style="color: white;font-weight: bolder;">Channel</span>
+            <span style="color: #555555;padding: 0px 10px 0px 10px;">|</span>
+            <span style="color: rgb(175, 175, 175);">Contributors of the Lunix</span>
+        </div>
+        <div id="content" class="card">
+            <!-- 这里都是需要生成的代码 -->
+            <!--加入时生成的代码-->
+            <!-- <div class="card bubble">Rain 进入了聊天室</div> -->
+            <!--离开时生成的代码-->
+            <!-- <div class="card bubble">Rain 离开了聊天室</div> -->
+            <!--聊天时生成的代码-->
+            <!-- <div class="chat">
+                <div class="chatContainer">
+                    <div class="avatar" style="background-image: url(https://gitee.com/coldrain-moro/images_bed/raw/master/images/chino.jpg);"></div>
+                    <div style="display: inline-block;position: relative;bottom: 20px;left: 10px;">
+                        <span class="username">Rain</span>
+                        <span class="time">2021/12/6 17:05</span>
+                    </div>
+                    <div class= "chatContent">巴拉巴拉，巴拉巴拉 <div class="image" style="background-image: url(https://avatars.githubusercontent.com/u/69996135?v=4);"></div></div>
+                </div>
+            </div>-->
+            <div id="placeholderBlock" style="height: 70px;"></div> 
+        </div>
+        <div id="input" class="card">
+            <input type="text" id="inputText" placeholder="在此输入信息后按enter发送~"/>
+        </div>
+    </div>
+</body>
+</html>

@@ -2,5 +2,9 @@
     width: 100px;
     height: 100px;
     border-radius: 100%;
-    margin-left: 100px;
+    transition: all 1s;
+}
+
+.circle.at-end {
+    transform: translateX(200px);
 }
