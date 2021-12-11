@@ -1,5 +1,5 @@
 // 连接WebSocket
-const ws = new WebSocket(`ws://anonym.ink:8000/homework/chatroom?username=${localStorage.getItem("username")}&avatar=${localStorage.getItem("avatar")}`)
+const ws = new WebSocket(`wss://anonym.ink:8000/homework/chatroom?username=${localStorage.getItem("username")}&avatar=${localStorage.getItem("avatar")}`)
 const input = document.querySelector("#inputText")
 const contentBox = document.querySelector("#content")
 const placeholder = document.querySelector("#placeholderBlock")
@@ -53,7 +53,7 @@ function parse(content) {
 }
 
 function parseSend(content) {
-    return content.replace(/image:(\S+)/, `<img src="$1" alt="图片" sizes="200px" />`)
+    return content.replace(/image:(\S+)/, `<img src="$1" alt="图片" width="400px" />`)
 }
 
 function send() {
