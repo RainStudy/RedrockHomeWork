@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Work7th</string>
+    <string name="do_network_request">进行网络请求</string>
+    <string name="next_level">NEXT LEVEL</string>
+    <string name="username">账号</string>
+    <string name="password">密码</string>
+    <string name="login">登陆</string>
+    <string name="register">注册</string>
+    <string name="repassword">确认密码</string>
+    <string name="next">NEXT</string>
+</resources>
